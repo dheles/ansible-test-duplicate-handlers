@@ -6,7 +6,7 @@
   # NOTE: set these to trigger handlers by name, as listeners, or both
   vars:
     by_name: true
-    as_listener: true
+    as_listener: false
 
   tasks:
   - include_role:
