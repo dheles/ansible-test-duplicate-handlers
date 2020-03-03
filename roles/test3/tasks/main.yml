@@ -1,0 +1,21 @@
+---
+# tasks file for test3
+
+# set default vars. override in calling playbook
+- set_fact:
+    trigger_by_name: false
+    trigger_by_listen: false
+
+- name: trigger handler by name
+  debug:
+    msg: "triggering handle by name from role test3"
+  changed_when: true
+  notify: handle by name
+  when: trigger_by_name
+
+- name: trigger handler as listener
+  debug:
+    msg: "triggering handle as listener from role test3"
+  changed_when: true
+  notify: handle as listener
+  when: trigger_as_listener

@@ -1,0 +1,26 @@
+
+
+- name: test duplicate handler handling
+  hosts: localhost
+
+  # NOTE: set these to trigger handlers by name, as listeners, or both
+  vars:
+    by_name: true
+    as_listener: true
+
+  tasks:
+  - include_role:
+      name: test1
+    vars:
+      trigger_by_name:      "{{ by_name }}"
+      trigger_as_listener:  "{{ as_listener }}"
+  - include_role:
+      name: test2
+    vars:
+      trigger_by_name:      "{{ by_name }}"
+      trigger_as_listener:  "{{ as_listener }}"
+  - include_role:
+      name: test3
+    vars:
+      trigger_by_name:      "{{ by_name }}"
+      trigger_as_listener:  "{{ as_listener }}"

@@ -1,0 +1,28 @@
+
+
+# when run using import_role, none of the handlers fire
+
+- name: bonus test duplicate handler handling using import
+  hosts: localhost
+
+  # NOTE: set these to trigger handlers by name, as listeners, or both
+  vars:
+    by_name: true
+    as_listener: true
+
+  tasks:
+  - import_role:
+      name: test1
+    vars:
+      trigger_by_name:      "{{ by_name }}"
+      trigger_as_listener:  "{{ as_listener }}"
+  - import_role:
+      name: test2
+    vars:
+      trigger_by_name:      "{{ by_name }}"
+      trigger_as_listener:  "{{ as_listener }}"
+  - import_role:
+      name: test3
+    vars:
+      trigger_by_name:      "{{ by_name }}"
+      trigger_as_listener:  "{{ as_listener }}"

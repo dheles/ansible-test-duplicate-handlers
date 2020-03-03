@@ -1,0 +1,15 @@
+
+
+- name: bonus test - duplicate handler handling using older syntax
+  hosts: localhost
+
+  # NOTE: the value of these vars does not get passed to the roles
+  # Manipulating the vars in the handlers produces the same results as the main playbook
+  vars:
+    trigger_by_name: true
+    trigger_as_listener: true
+
+  roles:
+  - test1
+  - test2
+  - test3

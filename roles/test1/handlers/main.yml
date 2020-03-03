@@ -1,0 +1,7 @@
+---
+# handlers file for test1
+
+- name: handle by name
+  debug:
+    msg: "handled by test1"
+  listen: handle as listener
